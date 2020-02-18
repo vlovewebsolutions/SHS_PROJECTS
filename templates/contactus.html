@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ContactUS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+{% block content %}
+<!----------Contact Top Section--------------->
+
+<!--<style>
+
+
+    .form-control {
+    width: 400px;
+    }
+
+
+</style>-->
+<section>
+     <div class="container-fluid d-block">
+         <div class="row  mt-5">
+             <div class="col-lg-6 col-md-6 col-12 mb-2 shadow border-right">
+            <br>
+            <h1 class="ml-3 mt-5">CONTACT US</h1>
+            <br>
+            <p class="ml-3">Phone: +91-9873225108,+91-9718222564</p>
+            <p class="ml-3">Email: vineetmodi1@gmail.com</p>
+        </div>
+            <div class="col-lg-6 col-md-6 col-12 mb-2 shadow">
+                <form action="{% url 'contactus' %}" method="POST">
+		         {% csrf_token %}
+		             <div class="form-group mt-4 ml-5">
+		            <label for="name">Enter Your Name:</label>
+		            <input type="name" placeholder="Name" required="true" class="form-control" id="name" name="name" required>
+		            </div>
+		            <div class="form-group ml-5">
+		            <label for="phone">Phone:</label>
+		            <input type="phone" placeholder="Phone number" required="true" class="form-control" id="phone" name="phone" required>
+		            </div>
+		            <div class="form-group mt-3 ml-5">
+		            <label for="email">Email:</label>
+		            <input type="email" placeholder="Email" reqiured="true" class="form-control" id="email" name="email">
+		            </div>
+		            <div class="form-group mt-3 ml-5">
+		            <label for="message">Mesaage:</label>
+		            <textarea type="message" class="form-control" name="message" id="message">
+		            </textarea>
+		            </div>
+		        <button onclick="greet()" type="submit" id="submit" class="btn mb-5 btn-info ml-5">Submit</button>
+		     </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-----------Contact Top Section End----------------------->
+
+
+{% endblock %}
+</body>
+
+</html>

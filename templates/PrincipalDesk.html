@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AboutUS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+{% block content %}
+<!------About US -------->
+  <section>
+    <div class="container-fluid">
+            <h1 class="text-center text-capitalize pt-5 font-weight-bold">About us</h1>
+            <hr class="w-25 mx-auto mt-5">
+      </div>
+      <div class="row mb-5">
+          <div class="col-lg-6 col-md-6 col-12">
+            <h1 class="text-center">Principal's Desk</h1>
+            <hr>
+            <p class="ml-2">
+              The school is following a dynamic approach to holistic education in a stress-free environment.
+                We promise to give you enough opportunities to play, explore, observe and engage.
+                The teaching-learning materials are of diverse range and there will be lot of fun and excitement at school,
+                both within and also outside the classroom. The safe, secure and enabling environment at Sarvodaya High School will
+                help you to bloom and blossom.
+                The entire team at Sarvodaya is passionate about learning through participation.
+                The participatory and experiential learning will help you become independent thinkers,
+                good decision makers, socially mature, emotionally stable and confident individuals.
+                The fun part does not stop here but continues till the play field to discover, grow and realize your dreams.
+              In your journey through the school, we would always welcome any new ideas and thoughts for improvement in
+                the school. We truly believe in offering a platform for promoting and imbibing values like –love, respect,
+                compassion, equality, tolerance and above all becoming Good Human Beings.
+            </p>
+            <div class="row justify-content-center">
+              <button class="btn bg-info text-white">Join us</button>
+            </div>
+
+          </div>
+        <div class="col-lg-6 col-md-6 col-12">
+              <img src="{% static 'images/DSCN0016.JPG' %}" class="img-fluid rounded"/>
+        </div>
+      </div>
+  </section>
+ <!------About US END -------->
+
+
+{% endblock %}
+
+</body>
+</html>

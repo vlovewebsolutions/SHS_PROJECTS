@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AboutUS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body style="background-image:url('{% static 'images/parallax_background_pic_2.jpeg' %}')">
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class=" m-3 text-center ">
+        <h3>Overview</h3>
+        <hr class="w-50 mx-auto ">
+    </div>
+    <div class="row border m-5 overview">
+        <p class="m-5 text-dark">
+            Sarvodaya High School was founded in the year 1997. Situated in the heart of sector-8, village-sihi,
+            the school has beautiful infrastructure with lush green lawns. The school is progressing leaps and
+            bounds as the students strength is touching 1500 under the dynamic and progressive leadership of
+            Academic Director Sir Mr. Dev Kishan.
+
+            Affiliated to CBSE (Central Board of Secondary Education) the school is following a rich curriculum
+            based on international teaching standards with modification, which is being continually updated with
+            activity based teaching at it’s core. We follow a child centered approach in teaching learning process
+            while delivering the content. The school provides excellent sports facilities to nurture the talented
+            students to hone their skills. Trained coaches are available for Athletics, Yoga, Table-Tennis, Lawn
+            Tennis, Volleyball, Basket ball and indoor games chess, carrom, taekwondo, badminton etc.
+
+            The school follows the club system to motivate each and every student to explore and polish their
+            inner talents through various clubs – Astronomy club , Environment club, Dramatics club, Cookery,
+            Calligraphy , Art & Craft, Music & Dance, Maths club, Science club & Computer club etc.
+            The special Assemblies are conducted by each class to teach moral values , to keep them aware of the
+            current socio economic problems, health related issues , celebration of festivals and important days.
+            The school administration is helped by a strong team of student council headed by Head boy and Head girl.
+            The school has House System from classes 3rd to 12th . The students in each class are divided in to four
+            houses namely – Galileo, Darwin, Aristotle and Faraday. To develop the Sprit of competition and allow children
+            to have first hand experience of planning and execution of events. House wise activities and competitions are
+            conducted on various themes and topics.
+        </p>
+    </div>
+</div>
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+.blink-headline {
+  background-color: #004A7F;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #1d8984; -webkit-box-shadow: 0 0 3px #1b94a7; }
+  50% { background-color: #29d3ee; -webkit-box-shadow: 0 0 40px #29d3ee; }
+  100% { background-color: #1d8984; -webkit-box-shadow: 0 0 3px #1b94a7; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #1b94a7; -moz-box-shadow: 0 0 3px #1b94a7; }
+  50% { background-color: #29d3ee; -moz-box-shadow: 0 0 40px #29d3ee; }
+  100% { background-color: #1b94a7; -moz-box-shadow: 0 0 3px #1b94a7; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #1b94a7; box-shadow: 0 0 3px #1b94a7; }
+  50% { background-color: #29d3ee; box-shadow: 0 0 40px #29d3ee; }
+  100% { background-color: #1b94a7; box-shadow: 0 0 3px #1b94a7; }
+}
+
+@keyframes glowing {
+  0% { background-color: #1b94a7; box-shadow: 0 0 3px #1b94a7; }
+  50% { background-color: #29d3ee; box-shadow: 0 0 40px #29d3ee; }
+  100% { background-color: #1b94a7; box-shadow: 0 0 3px #1b94a7; }
+}
+.h1_size_base_file {
+    font-size: 3.5em;
+}
+
+.i_delete:hover {
+color: #33a8ff
+}
+
+.carousel-inner img {
+      width: 1300px;
+      height: 700px;
+     }
+
+.card-img_top_marks {
+    height: 250px;
+    width: 200px;
+    }
+
+.card_top_marks {
+    height: 420px;
+    width: 200px;
+    }
+
+.card:hover_top_marks h4 {
+    color: #273746;
+    }
+
+.parallax {
+      background-image: url(/static/images/pa.jpg);
+      opacity: 0.9;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      }
+
+    .parrallax_second_heading {
+      color: #fff;
+      }
+
+.imgsetting {
+    border-radius: 50%;
+    background-color: #273746;
+    height: 100px;
+    width: 100px;
+    }
+
+    .fa-check-circle {
+    margin: 25px;
+    }
+    .fa-hand-peace{
+    margin: 20px;
+    }
+
+    .fa-plane {
+    margin: 25px;
+    }
+    .h1_admission_pro {
+    font-size: 36px;
+    color: #555;
+    font-weight: bold;
+    }
+
+    .h3_admission_pro {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    }
+
+    .card_img {
+    margin-top: -50px;
+    height: 100px;
+    width: 70px;
+    }
+    .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: red;
+}
+
+.card:hover a {
+background-color: #fff;
+color: #273746;
+}
+
+.card:hover h1{
+color: #fff;
+}
+.card:hover h3 {
+color: #fff;
+}
+.card:hover h2 {
+color: #fff;
+}
+
+.card hr {
+margin-top: 0px;
+margin-bottom: 5px;
+}
+
+.card p {
+margin-top: 0px;
+}
+
+.card:hover h4   {
+color: #fff;
+}
+
+.card_admission_pro {
+border-radius: 0;
+box-shadow: 5px 5px 15px #273746;
+transition: all 0.3s ease-in;
+}
+
+.card_admission_pro:hover {
+background: #273746;
+color: #fff;
+border-radius: 5px;
+border: none;
+box-shadow:5px 5px 10px #9E9E9E9E;
+}
+
+    /*.admission_pro_bg {
+    *//*background-image: url("{% static 'images/background-img.jpg' %}");*//*
+    background-image: url(/static/images/background-img.jpg);
+    }*/
+
+.btn-doc-req {
+  background-color: #273746;
+  color: #fff;
+  width: 500px;
+  height: 100px;
+  margin-top: 30px;
+  border-radius: 30px;
+  }
+
+  .btn-doc-req:hover {
+  background-color: #fff;
+  color: #273746;
+  }
+
+  .card-event {
+  box-shadow: 5px 5px 15px #424242;
+    background-color: #D8D8D8;
+  }
+
+  .overview {
+  background: #d9eef5;
+  }
+#calendar{
+    background-color: cornflowerblue;
+    color: #fff;
+    border-radius: 1%;
+    }
+#calendar>p{
+    font-family: Verdana, Arial, sans-serif;
+    padding: 5px 0;
+
+    margin: 0;
+    color: #fff;
+    text-align: center;
+}
+
+#calendar-day{
+    font-size: 30px;
+}
+
+#calendar-month-year{
+    font-size: 25px;
+}
+
+#calendar-date{
+    font-size: 100px;
+    padding-top: 10px;
+    padding-bottom: 0;
+}

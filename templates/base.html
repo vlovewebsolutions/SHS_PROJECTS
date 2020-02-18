@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SarvodayaHighSchool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'images/' %}">
+    <style>
+  *{
+   margin: 0; padding: 0; box-sizing: border-box;
+  }
+  header{ width: 100%; height: 300px; background: #d2dae2;}
+  .footer_style{
+   background: #273746; color: white;
+  }
+  .bgNav {
+  background-color: #273746;
+  }
+
+  a{
+   text-decoration: none;
+   color: white;
+  }
+
+
+  a:hover{ text-decoration: none; color: #4bcffa; }
+
+  .d-flex div{
+   text-align: center;
+   border-right: 1px solid grey;
+   border-top: 1px solid grey;
+  }
+
+  .d-flex div:last-child{
+   border-right:none;
+  }
+
+  @media(max-width: 768px){
+   li{
+    list-style: none;
+   }
+
+   .d-flex span{
+    display: none;
+   }
+  }
+
+ </style>
+
+</head>
+<body>
+<style>
+     .bg-lightTop {
+  background-color: #f0efdf;
+  }
+</style>
+
+<!---------------- BRAND SECTION-------------------------->
+
+<div class="row bg-lightTop">
+  <div class="col-sm-2 justify-content-center">
+      <img src="{% static 'images/logo-img.png' %}" class="d-inline-block align-top ml-5 mt-4 mb-4" style='width:110px;height:100px;margin-top:10px;margin-left:1px;margin-bottom:10px;border-radius:50%' alt="Smiley face"/>
+  </div>
+  <div class="col-lg-7">
+      <h1 class="mt-5 mb-4 ml-2 text-dark font-weight-bold h1_size_base_file align-left " >Sarvodaya High School</h1>
+  </div>
+  <div class="col-sm-3 bg-lightTop">
+      <a href="{% url 'admission_enquiry' %}">
+      <button class="btn blink-headline text-light mt-2 mr-2 mb-1 font-weight-bold"  type="button"><img src="{% static 'images/school.png' %}" class=" mr-5 ml-5 " width="70px" height="60x"/>ADMISSION OPEN FOR SESSION 2020-21
+          </button></a>
+  </div>
+</div>
+
+<!----------Brand Section------------------>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bgNav justify-content-center">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active ml-5 mr-2">
+        <a class="nav-link text-white font-weight-bold border-right" href="{% url 'home' %}">HOME</a> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown ml-2 mr-1">
+        <a class="nav-link dropdown-toggle text-white font-weight-bold border-right" data-toggle="dropdown" href="#">
+            ABOUT US
+        </a>
+          <div class="dropdown-menu">
+              <a href="{% url 'aboutus' %}" class="dropdown-item">Overview</a>
+              <a class="dropdown-item" href="{% url 'ChairmenDesk' %}">Chairmen's Desk</a>
+              <a  class="dropdown-item" href="{% url 'PrincipalDesk' %}">Principal's Desk</a>
+          </div>
+      </li>
+      <li class="nav-item dropdown ml-2 mr-2">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold border-right" href="#"  data-toggle="dropdown">
+        ADMISSION
+            </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'admission_enquiry' %}">Admission Enquiry</a>
+            <a class="dropdown-item" href="{% url 'admission_procedure' %}">Admission Procedure</a>
+            <!--<a class="dropdown-item Update" id="Doc_Require" href="">Document Require</a>-->
+        </div>
+      </li>
+        <li class="nav-item dropdown ml-2 mr-1">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold border-right" href="#" id="navbardrop" data-toggle="dropdown">
+        ACADEMICS
+            </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'faculty' %}">Faculty</a>
+            {% if user.is_authenticated %}
+            <a class="dropdown-item" href="{% url 'AddNewFaculty' %}">Add New Faculty</a>
+            {% endif %}
+        </div>
+      </li>
+        <li class="nav-item dropdown ml-2 mr-2">
+            <a class="nav-link dropdown-toggle text-white font-weight-bold border-right" href="#" data-toggle="dropdown">
+        GALLERY
+            </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'gallery' %}">View Pictures</a>
+          {% if user.is_authenticated %}
+          <a class="dropdown-item" href="{% url 'AddPost' %}">Upload Pictures</a>
+          {% endif %}
+        </div>
+        </li>
+        <li class="nav-item ml-2 mr-2">
+            <a class="nav-link text-white  font-weight-bold border-right" href="{% url 'contactus' %}">CONTACT US</a>
+        </li>
+        <li class="nav-item ml-2 mr-2">
+            <a class="nav-link text-white  font-weight-bold border-right" href="{% url 'career' %}">CAREER</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li><a class="nav-link text-white font-weight-bold border-right ml-1 mr-1">Hello, {{user.username}}</a></li>
+        <li><a class="nav-link text-white font-weight-bold ml-1 mr-1" href="{% url 'logout' %}">LOG OUT</a></li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link text-white font-weight-bold ml-2 mr-1" href="{% url 'login' %}">LOG IN</a>
+        </li>
+        {% endif %}
+    </ul>
+    <!--<form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    </form>-->
+  </div>
+</nav>
+
+      <!---------------------End Menu & End Navbar Section----------------------------->
+{% block content %}
+
+{% endblock %}
+<footer class="footer_style">
+<main class="container-fluid">
+ <div class="row p-5">
+  <div class="col-md-4 col-12 offset-md-1">
+   <p class="mt-5 mr-5"> Sarvodaya high school working in an education field since more than 10 years.
+       we are serving a great knowledge and a bright future. and we are providing a best talent to the country from our school.
+   </p>
+  </div>
+
+  <div class="col-md-4 col-12">
+   <h4>Contacts</h4>
+              <dl>
+                <dt>Address:</dt>
+                <dd>Village - Sihi, Sector 8, Faridabad</dd>
+              </dl>
+              <dl>
+                <dt>email:</dt>
+                <dd><a href="mailto:pankajtewatia1982@gmail.com" >pankajtewatia1982@gmail.com</a></dd>
+              </dl>
+              <dl>
+                <dt>phones:</dt>
+                <dd><a href="tel:#">+91 9350129425</a> <span>or</span> <a href="tel:#">+91 9654991511</a>
+                </dd>
+              </dl>
+  </div>
+
+  <div class="col-md-2 col-12">
+   <h4>Links</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Faculty</a></li>
+                <li><a href="#">Admission Enquiry</a></li>
+                <li><a href="#">Admission Procedure</a></li>
+                <li><a href="#">Gallery</a></li>
+                  <li><a href="#">Contact US</a></li>
+                  <li><a href="#">About US</a></li>
+              </ul>
+  </div>
+ </div>
+
+ <div class="d-flex flex-row justify-content-center align-items-center flex-wrap">
+   <div class="p-md-5 p-2 flex-fill ">
+   <a href="https://www.facebook.com/Sarvodaya-High-School-Sihi-108652190538478/?modal=admin_todo_tour"> <i class="fa fa-facebook-official" aria-hidden="true"></i> <span>Facebook</span> </a> </div>
+
+   <div class="p-md-5 p-2 flex-fill "><a href="https://www.instagram.com/vinodthapa55/"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a></div>
+
+   <div class="p-md-5 p-2 flex-fill "><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a></div>
+
+   <div class="p-md-5 p-2 flex-fill "><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i><span>Youtube</span></a></div>
+
+ </div>
+</main>
+</footer>
+
+ <style>
+      .footer{
+      height: 50px;
+      }
+
+      .footer h6 {
+      line-height: 50px;
+      }
+
+
+  </style>
+  <!-- Footer  Start -->
+<hr class="mt-0 mb-0">
+  <footer class="footer bg-dark mb-0">
+      <h6 class="text-center text-white">© 2019 Copyright: Sarvodaya High School, Faridabad. All rights reserved.</h6>
+  </footer>
+
+
+<!-- Footer End -->
+</body>
+</html>

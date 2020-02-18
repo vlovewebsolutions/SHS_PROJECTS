@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Career</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body style="background-image:url('{% static 'images/parallax_background_pic_2.jpeg' %}')">
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row border m-5 bg-secondary text-white p-5">
+        <div class="col-6 border-right">
+            <h6 class="text-center">Requirement</h6>
+            <hr class="mx-auto w-50 bg-white">
+        </div>
+        <div class="col-6 form-group">
+            <form action="{% url 'career' %}" method="post">
+                {% csrf_token %}
+                <lable>Name<span class="text-danger">*</span>:</lable>
+                <input type*="text" class="form-control" name="name" placeholder="Enter Name" required>
+                <lable>Phone<span class="text-danger">*</span>:</lable>
+                <input type="text" class="form-control" name="phone" placeholder="Enter Your Phone Number" required>
+                <lable>Email:</lable>
+                <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                <lable>Qualification<span class="text-danger">*</span>:</lable>
+                <input type="" class="form-control" name="qualification" placeholder="Enter Your Qualification" required>
+                <lable>Post applied for<span class="text-danger">*</span>:</lable>
+                <select class="custom-select" id="post" name="post" required>
+                <option selected>Choose...</option>
+                <option>TGT</option>
+                <option>PRT</option>
+                <option>PTI</option>
+                <option>Pre-primary Teacher</option>
+                <option>Art Teacher</option>
+                <option>Computer Teacher</option>
+                <option>Accountant</option>
+                <option>Clerk</option>
+                <option>Admin</option>
+                </select>
+                <lable>Total Experience<span class="text-danger">*</span>:</lable>
+                <input type="text" class="form-control" id="exp" name="exp" placeholder="Enter your Total Experience" required>
+                <lable>Area of specialization<span class="text-danger">*</span>:</lable>
+                <input type="text" class="form-control" id="as" name="as" placeholder="Area of specialization" required>
+                <h6 class="text-center m-3">Upload Resume</h6>
+                <div class="custom-file">
+                    <label class="custom-file-label" for="resume">Choose file</label>
+                    <input type="file" class="custom-file-input" name="resume" id="resume"  required>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary text-center">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+</body>
+</html>
