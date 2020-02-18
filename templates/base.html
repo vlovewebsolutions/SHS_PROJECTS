@@ -190,13 +190,13 @@
   <div class="col-md-2 col-12">
    <h4>Links</h4>
               <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Faculty</a></li>
-                <li><a href="#">Admission Enquiry</a></li>
-                <li><a href="#">Admission Procedure</a></li>
-                <li><a href="#">Gallery</a></li>
-                  <li><a href="#">Contact US</a></li>
-                  <li><a href="#">About US</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'faculty' %}">Faculty</a></li>
+                <li><a href="{% url 'admission_enquiry' %}">Admission Enquiry</a></li>
+                <li><a href="{% url 'admission_procedure' %}">Admission Procedure</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                  <li><a href="{% url 'contactus' %}">Contact US</a></li>
+                  <li><a href="{% url 'aboutus' %}">About US</a></li>
               </ul>
   </div>
  </div>
