@@ -7,6 +7,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, JsonResponse
 from django.http import HttpResponse
 from datetime import datetime
+
+from shs_web_project.settings import EMAIL_HOST_USER
 from .models import NotificationsModel, EventDetail, AddFacultyModel, \
     Post
 
@@ -207,12 +209,13 @@ def career(request):
         Qual = request.POST.get('qualification')
         Exp = request.POST.get('exp')
         AS = request.POST.get('as')
-        resume = request.FILES['resume']
         pankaj = 'pankajtewatia1982@gmail.com'
         Application = 'Name: '+Name+'\n'+'Email: '+Email+'\n'+'Phone: '+Phone+'\n'+'Applied for: '+PostA+'\n'+'Qualification: '+Qual+'\n'+'Total Experience: '+Exp+'\n'+'Area of Specialization: '+AS
         Subject = 'Application for Job!!!'
-        mail = EmailMessage(Subject, Application, settings.EMAIL_HOST_USER, [pankaj])
-        mail.attach(resume.resume, resume.read(), resume.content_type)
+        mail = EmailMessage(Subject, Application, EMAIL_HOST_USER, [pankaj])
+        mail.content_subtype = 'html'
+        resume = request.FILES['resume']
+        mail.attach(resume.name, resume.read(), resume.content_type)
         mail.send()
 
     return render(request, "career.html")
